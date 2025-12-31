@@ -131,7 +131,7 @@ function displayWeather(data) {
   updateBackground(condition);
   
   weatherResult.innerHTML = `
-    <div class="text-center">
+    <div class="text-center weather-card fade-up">
       <h2 class="text-3xl font-bold mb-2">${name}</h2>
       <img 
         src="https://openweathermap.org/img/wn/${icon}@4x.png" 
@@ -184,7 +184,7 @@ function display5DayForecast(data) {
     const description = day.weather[0].description;
     
     return `
-      <div class="bg-white/20 backdrop-blur-lg rounded-xl p-4 text-center">
+      <div class="forecast-card fade-up bg-white/20 rounded-xl p-4 text-center">
         <p class="font-semibold mb-2">${dayName}</p>
         <img 
           src="https://openweathermap.org/img/wn/${icon}@2x.png" 
@@ -319,7 +319,7 @@ function showLoading() {
   weatherResult.innerHTML = `
     <div class="text-center py-8">
       <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-white mx-auto"></div>
-      <p class="mt-4">Loading weather data...</p>
+      <p class="mt-4" aria-live="polite">Loading weather data...</p>
     </div>
   `;
   weatherResult.classList.remove('hidden');
