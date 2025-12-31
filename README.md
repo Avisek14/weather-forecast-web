@@ -157,6 +157,19 @@ Geolocation requires HTTPS or localhost
 
 
 
+🔐 API Key Note
+
+This project uses the OpenWeatherMap API.
+Since this is a frontend-only application deployed on GitHub Pages,
+the API key is visible in the client-side JavaScript.
+
+For production use, the API key should be secured using a backend server
+or environment variables with server-side rendering.
+
+The key used here is restricted and intended only for educational purposes.
+
+
+
 🌍 Live Deployment
 This project can be deployed easily using GitHub Pages.
 
