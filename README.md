@@ -216,3 +216,11 @@ Desktop View :-
 
 mobile View :-
 --------------
+
+![Home Page Mobile](<images/mobile/home page.jpeg>)
+
+![Search bar Mobile](images/mobile/search.jpeg)
+
+![forecast card Mobile](images/mobile/forecast.jpeg)
+
+![Extreme Temperature Mobile](<images/mobile/Extrem Tempreture.jpeg>)
