@@ -47,6 +47,19 @@ weather-forecast-app/
 │   ├── custom.css       # Custom animations, hover, responsiveness
 │   └── input.css        # Tailwind input file (build purpose)
 │
+├── images/
+│   ├── desktop/         # Desktop view screenshots
+│   │   ├── home-desktop.png
+│   │   ├── search-desktop.png
+│   │   ├── forecast-desktop.png
+│   │   └── extreme-temperature-desktop.png      #  Extreme temperature view
+│   │
+│   └── mobile/          # Mobile view screenshots
+│       ├── home-mobile.png
+│       ├── search-mobile.png
+│       ├── forecast-mobile.png
+│       └── extreme-temperature-mobile.png       # Extreme temperature view
+│
 ├── index.html           # Main HTML entry point
 ├── README.md            # Project description & usage
 ├── package.json         # Project config & dependencies
@@ -174,3 +187,19 @@ Tailwind CSS for styling utilities
 
 
 🖼️ Screenshots
+
+
+Desktop View :-
+---------------
+
+![Home page Desktop](<images/desktop/Screenshot 2025-12-31 211631.png>)
+
+![Search bar Desktop](<images/desktop/Screenshot 2025-12-31 211919.png>)
+
+![forecast card Desktop](<images/desktop/Screenshot 2025-12-31 213236.png>)
+
+![Extreme Temperature Desktop ](<images/desktop/Screenshot 2025-12-31 213330.png>)
+
+
+mobile View :-
+--------------
