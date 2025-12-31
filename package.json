@@ -1,0 +1,17 @@
+{
+  "name": "weather-forecast-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli --input ./src/input.css --output ./src/style.css --watch",
+    "build": "npx @tailwindcss/cli --input ./src/input.css --output ./src/style.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.1.18"
+  }
+}
