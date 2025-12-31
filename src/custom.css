@@ -1,0 +1,410 @@
+/* =====================
+   Global Animations
+===================== */
+
+/* Fade + Slide Up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale In */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Pulse Glow */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Attach animations (via class names) */
+
+.fade-up {
+  animation: fadeUp 0.6s ease-out both;
+}
+
+.scale-in {
+  animation: scaleIn 0.4s ease-out both;
+}
+
+.glow {
+  animation: glow 2.5s infinite ease-in-out;
+}
+
+
+/* Enhance Weather Card (premium feel) */
+
+
+.weather-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Forecast cards hover animation */
+
+
+.forecast-card {
+  transition: all 0.3s ease;
+}
+
+.forecast-card:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+/*  Forecast Card Style (always active) */
+
+.forecast-card {
+    position: relative;
+    transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
+}
+
+
+/* Desktop Hover Effect (only where hover exists) */
+
+
+@media (hover: hover) and (pointer: fine) {
+    .forecast-card:hover {
+    transform: translateY(-10px) scale(1.06);
+    background-color: rgba(255, 255, 255, 0.32);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    .forecast-card:hover img {
+    transform: translateY(-6px);
+    }
+}
+
+
+/* Smooth Icon Animation */
+
+
+.forecast-card img {
+  transition: transform 0.35s ease;
+}
+
+
+/* Click / Tap Feedback (ALL devices) */
+
+
+.forecast-card:active {
+  transform: scale(0.96);
+}
+
+
+
+/* Button interaction  */
+
+button {
+  transition: all 0.25s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+
+/* Button click feedback */
+
+button {
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:active {
+  transform: scale(0.94);
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Search Button – Ripple / Glow Press */
+
+#searchBtn:active {
+  background-color: rgb(29 78 216);      /* deep blue */
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+}
+
+
+/* Location Button – GPS pulse effect */
+
+#locationBtn {
+  position: relative;
+  overflow: hidden;
+}
+
+#locationBtn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.25);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#locationBtn:active::after {
+  opacity: 1;
+}
+
+
+/* Keyboard accessibility */
+
+button:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 3px;
+}
+
+
+/* Loader smooth  */
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* =====================
+    Footer Styles
+===================== */
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.social-icon svg {
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover svg {
+  transform: scale(1.1);
+}
+
+footer a {
+  text-decoration: none;
+}
+
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+/* Responsive Style using Custom CSS */
+/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+
+
+ /* Mobile (≤ 480px) */
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  #tempDisplay {
+    font-size: 3.2rem;
+  }
+
+  button {
+    padding: 0.65rem 1rem;
+  }
+
+  .forecast-card {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* Large Mobile (481px – 640px) */
+
+
+@media (min-width: 481px) and (max-width: 640px) {
+  #tempDisplay {
+    font-size: 3.8rem;
+  }
+
+  .forecast-card {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* Tablet (641px – 1024px) */
+
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  main {
+    max-width: 42rem;
+  }
+
+  #tempDisplay {
+    font-size: 4.5rem;
+  }
+
+  .forecast-card {
+    padding: 1.25rem;
+  }
+}
+
+
+/* Laptop (1025px – 1440px) */
+
+
+@media (min-width: 1025px) {
+  main {
+    max-width: 48rem;
+  }
+
+  .weather-card {
+    animation-duration: 0.8s;
+  }
+
+  .forecast-card:hover {
+    transform: translateY(-8px) scale(1.06);
+  }
+}
+
+
+/* Large Screens / Monitors (≥ 1441px) */
+
+
+@media (min-width: 1441px) {
+  main {
+    max-width: 56rem;
+  }
+
+  body {
+    font-size: 1.05rem;
+  }
+}
+
+
+
+/* iPhone SE */
+
+
+/* iPhone SE (375px) */
+@media (max-width: 375px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  #tempDisplay {
+    font-size: 3rem;
+  }
+
+  input {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.9rem;
+  }
+
+  .forecast-card {
+    font-size: 0.8rem;
+    padding: 0.75rem;
+  }
+}
+
+
+/* iPad Mini (768px) */
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  main {
+    max-width: 44rem;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  #tempDisplay {
+    font-size: 4.5rem;
+  }
+
+  .forecast-card {
+    padding: 1.3rem;
+    font-size: 0.95rem;
+  }
+}
+
+
+
+/* Desktop (1280px and Above) */
+
+
+@media (min-width: 1280px) {
+  main {
+    max-width: 56rem;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  #tempDisplay {
+    font-size: 5.2rem;
+  }
+
+  .weather-card {
+    transition: transform 0.4s ease;
+  }
+
+  .weather-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .forecast-card:hover {
+    transform: scale(1.07);
+  }
+}
+
+
+
+
