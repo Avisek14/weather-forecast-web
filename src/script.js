@@ -12,6 +12,32 @@ const forecastResult = document.getElementById('forecastResult');
 // Temperature unit toggle
 let isCelsius = true;
 
+// Weather icon emoji mapping
+function getWeatherEmoji(iconCode) {
+  const emojiMap = {
+    '01d': '☀️',  // clear sky day
+    '01n': '🌙',  // clear sky night
+    '02d': '⛅',  // few clouds day
+    '02n': '☁️',  // few clouds night
+    '03d': '☁️',  // scattered clouds
+    '03n': '☁️',
+    '04d': '☁️',  // broken clouds
+    '04n': '☁️',
+    '09d': '🌧️',  // shower rain
+    '09n': '🌧️',
+    '10d': '🌦️',  // rain day
+    '10n': '🌧️',  // rain night
+    '11d': '⛈️',  // thunderstorm
+    '11n': '⛈️',
+    '13d': '❄️',  // snow
+    '13n': '❄️',
+    '50d': '🌫️',  // mist
+    '50n': '🌫️'
+  };
+  
+  return emojiMap[iconCode] || '🌤️';
+}
+
 // Initialize app
 document.addEventListener('DOMContentLoaded', () => {
   loadRecentCities();
@@ -123,6 +149,7 @@ function displayWeather(data) {
   const condition = weather[0].main;
   const description = weather[0].description;
   const icon = weather[0].icon;
+  const emoji = getWeatherEmoji(icon);
   
   // Check for extreme temperature alert
   checkTemperatureAlert(temperature);
@@ -133,11 +160,7 @@ function displayWeather(data) {
   weatherResult.innerHTML = `
     <div class="text-center weather-card fade-up">
       <h2 class="text-3xl font-bold mb-2">${name}</h2>
-      <img 
-        src="https://openweathermap.org/img/wn/${icon}@4x.png" 
-        alt="${description}"
-        class="w-32 h-32 mx-auto"
-      />
+      <div class="text-8xl my-4">${emoji}</div>
       <div class="flex items-center justify-center gap-4 my-4">
         <p class="text-6xl font-bold" id="tempDisplay">${temperature}°C</p>
         <button 
@@ -169,7 +192,7 @@ function displayWeather(data) {
   weatherResult.classList.remove('hidden');
 }
 
-// Display 5-day forecast
+// Display 5-day forecast (FIXED VERSION)
 function display5DayForecast(data) {
   // Get one forecast per day (around 12:00 PM)
   const dailyForecasts = data.list.filter(item => 
@@ -182,15 +205,12 @@ function display5DayForecast(data) {
     const temp = Math.round(day.main.temp);
     const icon = day.weather[0].icon;
     const description = day.weather[0].description;
+    const emoji = getWeatherEmoji(icon);
     
     return `
       <div class="forecast-card fade-up bg-white/20 rounded-xl p-4 text-center">
         <p class="font-semibold mb-2">${dayName}</p>
-        <img 
-          src="https://openweathermap.org/img/wn/${icon}@2x.png" 
-          alt="${description}"
-          class="w-16 h-16 mx-auto"
-        />
+        <div class="text-5xl my-3">${emoji}</div>
         <p class="text-2xl font-bold">${temp}°C</p>
         <p class="text-sm opacity-80 capitalize">${description}</p>
         <div class="mt-2 text-xs space-y-1">
