@@ -406,5 +406,38 @@ footer a {
 }
 
 
+/* =================================
+    5-Day Forecast Responsive Layout
+===================================== */
+
+/* Mobile: Single column (stacked) */
+@media (max-width: 639px) {
+  #forecastResult .grid {
+    grid-template-columns: 1fr !important;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* Small tablets: 2 columns with centered last card */
+@media (min-width: 640px) and (max-width: 767px) {
+  #forecastResult .grid > *:last-child:nth-child(odd) {
+    grid-column: span 2;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
+/* Tablets and Desktop: 5 columns */
+@media (min-width: 768px) {
+  #forecastResult .grid {
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
+}
+
+
+/* ================================= */
+
+
 
 
