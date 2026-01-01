@@ -1,4 +1,10 @@
 🌤️ Weather Forecast Application
+🔗Git Hub Link of this Project :-
+----------------------------------
+
+[This is the Git Hub link of this Project](https://github.com/Avisek14/weather-forecast-web)
+
+
 A modern, responsive weather forecast application built with JavaScript, HTML, and Tailwind CSS. Get real-time weather data and 5-day forecasts for any city or your current location.
 
 ✨ Features
@@ -224,10 +230,3 @@ mobile View :-
 ![forecast card Mobile](images/mobile/forecast.jpeg)
 
 ![Extreme Temperature Mobile](<images/mobile/Extrem Tempreture.jpeg>)
-
-
-
-🔗Git Hub Link of this Project :-
-----------------------------------
-
-[This is the Git Hub link of this Project](https://github.com/Avisek14/weather-forecast-web)
